@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050505;
+    font-family: 'Poppins', sans-serif;
+    perspective: 1000px; /* 3D chuqurlik beradi */
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+}
+
+.card-wrapper {
+    width: 280px;
+    height: 400px;
+    transition: transform 0.1s;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+}
+
+.card-content {
+    color: white;
+    transform: translateZ(50px); /* Matnni kartadan "chiqarib" ko'rsatadi */
+}
+
+.card-content h2 { font-size: 2rem; margin: 0; }
+.card-content p { opacity: 0.7; }
+
+/* Karta ustidagi yaltirash effekti */
+.glare {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+    pointer-events: none;
+}
